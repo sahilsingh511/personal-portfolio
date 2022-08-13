@@ -8,7 +8,7 @@
 
 html {
   font-size: 100%;
-  font-family: "Asap Condensed", Ebrima;
+  font-family: "Segoe UI";
 }
 
 body {
@@ -29,7 +29,12 @@ body {
 #welcome-section {
   height: 100vh;
   width: 100%;
-  background: linear-gradient(to right, #24c6dc, #3a7bd5);
+  background: -webkit-linear-gradient(
+    to bottom,
+    #7474bf,
+    #348ac7
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #7474bf, #348ac7);
   position: relative;
 }
 
@@ -50,12 +55,12 @@ body {
   align-items: center;
   padding: 0.5rem;
   width: 100%;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
-  background: linear-gradient(to right, #6dd5ed, #57d9eb);
+  background: rgba(256, 256, 256, 0.5);
   z-index: 1;
-  border-bottom: 2px solid rgb(66, 183, 212);
+  /*border-bottom: 2px solid rgb(66, 183, 212);*/
 }
 
 .links a {
@@ -63,7 +68,13 @@ body {
   color: #000;
   padding: 0.5rem;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 600;
+  font-family: Ink Free;
+  transition: 0.1s;
+}
+
+.links a:hover {
+  transform: scale(0.3);
 }
 
 .mains {
@@ -87,7 +98,9 @@ body {
 }
 
 .about p {
-  line-height: 25px;
+  font-family: Consola;
+  line-height: 22px;
+  letter-spacing: 1px;
 }
 
 .buttons {
@@ -128,7 +141,7 @@ body {
 
 .imag {
   width: 40%;
-  padding: 0 0.5rem;
+  padding: 1rem 0.5rem;
 }
 
 .imag img {
@@ -156,26 +169,27 @@ body {
 .information ul {
   list-style-type: "+";
   font-weight: bold;
-  color: rgb(25, 172, 230)
+  color: rgb(25, 172, 230);
 }
 
-.information ul li{
+.information ul li {
   width: 100%;
 }
 
 .btns {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding: 0 1rem;
 }
 
-.btns * {
+.btns > * {
   background-color: rgb(33, 194, 235);
   color: #fff;
   padding: 0.5rem 0.8rem;
-  border: 1px solid rgb(18, 175, 223);
-  border-radius: 3px;
+  border-radius: 2px;
   font-size: 1rem;
+  border: none;
+  font-style: italic;
 }
 
 .connect {
@@ -223,6 +237,8 @@ body {
 }
 
 .projects-grid a {
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
   width: 30%;
   padding: 1rem;
@@ -240,12 +256,25 @@ body {
 .project-title {
   font-size: 1.3rem;
   font-family: "MS Comic Sans";
-  font-weight: bold;
-  padding: 1rem 0.5rem;
+  font-weight: 500;
+  padding: 0.8rem 0.5rem;
   text-align: center;
   color: #fff;
-  background-color: rgb(88, 87, 87);
+  background: #00b09b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #96c93d,
+    #00b09b
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #96c93d,
+    #00b09b
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   margin-top: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .services {
@@ -259,8 +288,9 @@ body {
   align-items: center;
 }
 
-.service * {
-  background-color: #20bdff;
+.service > * {
+  background-color: #8ec5fc;
+  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
   color: #fff;
   width: 28%;
   display: flex;
@@ -276,7 +306,12 @@ body {
   box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.4);
 }
 
-.service * * {
+.service > * h2,
+.service > * p {
+  text-align: center;
+}
+
+.service * > * {
   padding: 1rem;
   width: 80%;
   font-family: "Corbel";
@@ -284,19 +319,23 @@ body {
 
 .service * h2 {
   font-family: "Dubai";
-  color: floralwhite;
+  color: grey;
+  font-weight: 400;
 }
 
 .btn {
-  background-color: rgb(93, 215, 247);
+  background-color: #8bc6ec;
+  background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
   color: #fff;
   margin: 1rem 0;
-  border: 2px solid rgb(18, 175, 223);
-  border-radius: 3px;
+  border: 1px solid rgb(18, 175, 223);
+  border-radius: 2px;
   font-size: 0.9rem;
   font-size: 1rem;
   font-weight: bold;
-  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: capitalize;
 }
 
 .contactus {
